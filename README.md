@@ -1,79 +1,190 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Express: 4.18.1,
 
-# Getting Started
+Node version: v18.14.1,
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Project 
+ This Project is built In  Node.js with Express and DI principles.
 
-## Step 1: Start the Metro Server
+Table of Contents
+    Description
+    Key Features
+    Folder Structure
+    Installation
+    Environment Variables
+    API Endpoints
+    Dependencies
+    Contributing
+    License
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Description
 
-To start Metro, run the following command from the _root_ of your React Native project:
+   This Node.js project, developed using the Express framework, is a scalable and maintainable foundation that combines the power of Dependency Injection (DI) principles with the principles of Domain-Driven Design (DDD). The application is designed to provide robust functionality for user and driver management, featuring APIs for user registration, driver registration, user login, and fetching driver profiles.
 
-```bash
-# using npm
-npm start
+Key Features
+    User and Driver Functionality:
 
-# OR using Yarn
-yarn start
-```
+    1. The project caters to two primary roles: "user" and "driver." It provides comprehensive APIs for user registration and login, as well as driver registration and profile retrieval.
+    Dependency Injection Emphasis:
 
-## Step 2: Start your Application
+    2. With a strong emphasis on Dependency Injection (DI) principles, the project achieves loose coupling between components. This design choice promotes modularity, testability, and maintainability, making it easier to extend and modify the system.
+    Domain-Driven Design (DDD) Approach:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+    3. Following the principles of Domain-Driven Design, the application fosters a shared understanding of the problem domain between technical and domain experts. This approach facilitates effective communication and ensures that the software model aligns closely with real-world business concepts.
+    Clear Separation of Concerns:
 
-### For Android
+    4. The project's folder architecture demonstrates a clear separation of concerns, with dedicated directories for components such as controllers, repositories, services, and dependency injection containers. This structure enhances code organization and readability.
+    Scalability and Maintainability:
 
-```bash
-# using npm
-npm run android
+    5. The project's design principles contribute to scalability and maintainability. As the system grows, the modular architecture allows for the addition of new features and modifications without introducing unintended side effects.
 
-# OR using Yarn
-yarn android
-```
+Using Class-Based Components
 
-### For iOS
+    This project follows a class-based component structure. In the src folder, you will find components organized as classes.
+    
+    For example:
 
-```bash
-# using npm
-npm run ios
+            class ExampleComponent {
+                constructor() {
+                    // constructor logic
+                }
+                // other methods and properties
+            }
 
-# OR using Yarn
-yarn ios
-```
+            export default ExampleComponent;
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+Folder Structure
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+    project-root/
+    │
+    ├── app/
+    │   ├── Helper/
+    │   ├── middleware/
+    │   ├── model/
+    │   ├── routes/
+    │   ├── scheduler/
+    │   ├── socket/
+    │   ├── src/
+    │   │   ├── container/
+    │   │   ├── controller/
+    │   │   ├── repository/
+    │   │   └── service/
+    │   ├── util/
+    │   └── redis/
+    ├── config/
+    ├── logs/
+    ├── .env
+    ├── package.json
+    ├── gitignore
+    └── server.js
 
-## Step 3: Modifying your App
+Installation
+    git clone https://github.com/your-username/your-repo.git
 
-Now that you have successfully run the app, let's modify it.
+NPM INSTALL
+    npm install
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-## Congratulations! :tada:
+Environment Variables:
 
-You've successfully run and modified your React Native App. :partying_face:
+ Overview
+    This project relies on certain environment variables to configure and customize its behavior. Environment variables are a way to pass configuration information to your application without hardcoding values into your code. They provide flexibility and security, especially when deploying applications to different environments.
 
-### Now what?
+Configuration
+ 
+    This project relies on several environment variables for configuration. These variables are used in a separate configuration file located in the config folder. Here is a breakdown of the environment variables:
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+    PORT: The port on which the server will listen.
 
-# Troubleshooting
+    API_PREFIX: Prefix for general API routes.
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+    API_PREFIX_USER: Prefix for user-specific API routes.
 
-# Learn More
+    DEBUG: Set this to true to enable debugging mode.
 
-To learn more about React Native, take a look at the following resources:
+    MONGODB_USERNAME, MONGODB_PASSWORD, MONGODB_CLUSTER, MONGODB_DBNAME: MongoDB connection details.
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+    REDIS_PORT, REDIS_HOST, REDIS_PASSWORD: Redis connection details.
+
+    TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER: Twilio API credentials and phone number for SMS functionality.
+
+    MAIL_SERVICE, MAIL_USER, MAIL_PASSWORD, SENDER_MAIL: Email configuration for sending notifications.
+
+    JWT_SECRET: Secret key for JSON Web Token (JWT) generation.
+
+Setting Environment Variables
+
+   To configure these variables, create a file named .env in the root of your project and add the necessary values:
+        PORT=3000
+
+        API_PREFIX=/api
+
+        API_PREFIX_USER=/user/api
+
+        DEBUG=true
+
+        MONGODB_USERNAME=username
+
+        MONGODB_PASSWORD=password
+
+        MONGODB_CLUSTER=cluster-url
+
+        MONGODB_DBNAME=database-name
+
+        REDIS_PORT=6379
+
+        REDIS_HOST=localhost
+
+        REDIS_PASSWORD=redis-password
+
+        TWILIO_ACCOUNT_SID=your-account-sid
+
+        TWILIO_AUTH_TOKEN=your-auth-token
+
+        TWILIO_PHONE_NUMBER=your-phone-number
+
+        MAIL_SERVICE=mail-service
+
+        MAIL_USER=mail-user
+
+        MAIL_PASSWORD=mail-password
+
+        SENDER_MAIL=sender-email
+
+        JWT_SECRET=your-jwt-secret
+
+Security Considerations
+
+Always treat environment variables containing sensitive information with care. Avoid hardcoding these values in your code and ensure that they are kept confidential. Regularly review and rotate credentials for enhanced security.
+ 
+Create User API
+
+    Endpoint: /api/v1/users
+    Method: POST
+    Description: Create a new user.
+
+Login
+
+    Endpoint:/api/v1/user/login
+    Method: POST
+    Description: user Login.
+
+Logout User API
+
+    Endpoint: /api/v1/logout
+    Method: POST
+    Description: Logout a user.
+
+Register Driver API
+
+    Endpoint:/api/v1/driver/register
+    Method: POST
+    Description: Register a driver.
+   
+Driver Profile API
+
+    Endpoint: /api/v1/driver/profile
+    Method: GET
+    Description: Get driver profile.
+
+ 
