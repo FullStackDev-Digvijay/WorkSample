@@ -1,58 +1,79 @@
-**Django OTP Registration and Payment App**
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+# Getting Started
 
-**Overview**
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-This Django web application allows users to register for an account, receive a one-time password (OTP) via email, and verify their identity by entering the OTP. Upon successful verification, users are redirected to the dashboard. Additionally, the application integrates with Stripe to facilitate secure payments for exam purchases.
-Features
+## Step 1: Start the Metro Server
 
-User Registration: Users can sign up for an account by providing their email address and password.
+First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-OTP Verification: After registration, a one-time password (OTP) is sent to the user's email address. Users must enter the OTP within 1 minute to successfully verify their identity.
+To start Metro, run the following command from the _root_ of your React Native project:
 
-Dashboard: Upon successful OTP verification, users are redirected to the dashboard, where they can access various features and information.
+```bash
+# using npm
+npm start
 
-Stripe Integration: The application utilizes Stripe for secure payment processing. Users can purchase exams by providing payment details through the integrated Stripe payment gateway.
+# OR using Yarn
+yarn start
+```
 
-Installation
+## Step 2: Start your Application
 
-Clone the repository:
-        https://github.com/KontinuumKode/WorkSample.git
-Navigate to the project directory:
+Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
+### For Android
 
+```bash
+# using npm
+npm run android
 
-    cd django-otp-registration-payment
+# OR using Yarn
+yarn android
+```
 
-Install the required dependencies:
+### For iOS
 
+```bash
+# using npm
+npm run ios
 
-    pip install -r requirements.txt
+# OR using Yarn
+yarn ios
+```
 
-Apply database migrations:
+If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
 
+This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-    python manage.py migrate
+## Step 3: Modifying your App
 
-Set up your Stripe API keys:
+Now that you have successfully run the app, let's modify it.
 
-    Obtain your Stripe API keys from the Stripe Dashboard.
-    Update the STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY in the settings.py file with your own keys.
+1. Open `App.tsx` in your text editor of choice and edit some lines.
+2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
-Run the development server:
+   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-    python manage.py runserver
+## Congratulations! :tada:
 
-    Access the application in your web browser at http://127.0.0.1:8000/.
+You've successfully run and modified your React Native App. :partying_face:
 
-Usage
+### Now what?
 
-**Register for an account by providing your email address and password.**
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
-**Check your email for the OTP sent to you.**
+# Troubleshooting
 
-**Enter the OTP within 1 minute to successfully verify your identity.**
+If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-**Once verified, you will be redirected to the dashboard.**
+# Learn More
 
-**Navigate to the exam purchase section and make a payment using the integrated Stripe payment gateway.**
+To learn more about React Native, take a look at the following resources:
+
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
